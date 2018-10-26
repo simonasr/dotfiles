@@ -18,6 +18,7 @@ brew install screen
 brew install vim
 brew install wget
 brew install zsh
+brew install fzf
 
 # brew casks installations
 # brew cask install amm
@@ -36,3 +37,6 @@ brew cask install vlc
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Boost fzf
+/usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish

@@ -9,6 +9,9 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_fzf.zsh:
+    dst: ~/.fzf.zsh
+    src: fzf.zsh
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -16,3 +19,4 @@ profiles:
   Simonass-Air.lan:
     dotfiles:
     - f_zshrc
+    - f_fzf.zsh
