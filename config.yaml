@@ -1,0 +1,8 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+  longkey: true
+  showdiff: true
+dotfiles:
+profiles:
