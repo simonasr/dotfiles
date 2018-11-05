@@ -9,6 +9,12 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_config_nvim_init.vim:
+    dst: ~/.config/nvim/init.vim
+    src: config/nvim/init.vim
+  f_fzf.zsh:
+    dst: ~/.fzf.zsh
+    src: fzf.zsh
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -16,3 +22,5 @@ profiles:
   Simonass-Air.lan:
     dotfiles:
     - f_zshrc
+    - f_fzf.zsh
+    - f_config_nvim_init.vim
