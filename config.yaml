@@ -5,8 +5,7 @@ config:
   dotpath: dotfiles
   ignoreempty: false
   keepdot: false
-  link_dotfile_default: nolink
-  link_on_import: nolink
+  link: link
   longkey: true
   showdiff: true
   workdir: ~/.config/dotdrop
