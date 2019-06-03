@@ -45,3 +45,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew install neovim
 pip3 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Firacode fonts
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
