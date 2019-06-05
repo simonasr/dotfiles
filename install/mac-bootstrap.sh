@@ -34,3 +34,6 @@ echo 'Installing xcode cli tools'
 
 # Installing gems
 . $HOME/dotfiles/install/gem-install.sh
+
+# Installing manual "git clone" things
+. $HOME/dotfiles/install/git-clone-installs.sh
