@@ -27,6 +27,9 @@ dotfiles:
   f_gitignore:
     dst: ~/.gitignore
     src: gitignore
+  f_overcommit.yml:
+    dst: ~/.overcommit.yml
+    src: overcommit.yml
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -44,3 +47,4 @@ profiles:
     - f_gitconfig
     - f_gitignore
     - d_vim
+    - f_overcommit.yml

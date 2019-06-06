@@ -130,4 +130,14 @@ zstyle ':completion:::::' completer _expand _complete _ignored _approximate # en
 # Smth 
 eval "$(anyenv init -)"
 
+# Load env vars
 source ~/.zsh_env_vars
+
+# Load functions
+fpath=($fpath ~/dotfiles/functions)
+autoload -Uz ~/dotfiles/functions/**/*
+
+# Install .overcommit.yml to git repos
+precmd() {  # run before each prompt
+  check_overcommit
+}
