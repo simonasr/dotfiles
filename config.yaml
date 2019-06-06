@@ -48,3 +48,6 @@ profiles:
     - f_gitignore
     - d_vim
     - f_overcommit.yml
+  Simonass-MacBook-Pro.local:
+    include:
+    - "Simonass-MBP.lan"
