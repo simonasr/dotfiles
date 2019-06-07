@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/sirup/.gitignore
 [github]
   user = simonasr
 [difftool "sourcetree"]
