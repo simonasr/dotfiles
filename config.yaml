@@ -5,17 +5,14 @@ config:
   dotpath: dotfiles
   ignoreempty: false
   keepdot: false
-  link_by_default: false
   longkey: true
   showdiff: true
   workdir: ~/.config/dotdrop
+  link_on_import: nolink
 dotfiles:
   d_vim:
     dst: ~/.vim
     src: vim
-  f_config_nvim_init.vim:
-    dst: ~/.config/nvim/init.vim
-    src: config/nvim/init.vim
   f_fzf.zsh:
     dst: ~/.fzf.zsh
     src: fzf.zsh
@@ -31,13 +28,19 @@ dotfiles:
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
+  f_config_nvim_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+  f_config_kitty_kitty.conf:
+    src: config/kitty/kitty.conf
+    dst: ~/.config/kitty/kitty.conf
 profiles:
   Simonass-Air.lan:
     dotfiles:
     - f_zshrc
     - f_fzf.zsh
     - f_config_nvim_init.vim
-  Simonass-MBP.lan:
+  Simonass-MacBook-Pro.local:
     dotfiles:
     - f_zshrc
     - f_fzf.zsh
@@ -46,6 +49,7 @@ profiles:
     - f_gitignore
     - d_vim
     - f_overcommit.yml
-  Simonass-MacBook-Pro.local:
+    - f_config_kitty_kitty.conf
+  Simonass-MBP.lan:
     include:
-    - "Simonass-MBP.lan"
+    - Simonass-MacBook-Pro.local
