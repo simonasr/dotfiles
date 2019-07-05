@@ -20,6 +20,7 @@ brew install wget
 brew install zsh
 brew install fzf
 brew install shellcheck
+brew install imagemagick
 
 # brew casks installations
 # brew cask install amm
@@ -43,7 +44,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Boost fzf
 /usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish
 
-# nvim 
+# nvim
 brew install neovim
 pip3 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
