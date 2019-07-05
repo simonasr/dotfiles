@@ -28,7 +28,7 @@ PreCommit:
     enabled: true
 
   ExecutePermissions:
-    enabled: true
+    enabled: false
 
   FixMe:
     enabled: true

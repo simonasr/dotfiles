@@ -19,6 +19,7 @@ brew install screen
 brew install wget
 brew install zsh
 brew install fzf
+brew install shellcheck
 
 # brew casks installations
 # brew cask install amm
@@ -34,6 +35,7 @@ brew install fzf
 # brew cask install spotify
 brew cask install vlc
 # brew cask install xquartz
+brew cask install kitty
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
