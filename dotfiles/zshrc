@@ -1,8 +1,16 @@
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
+setopt histignoredups
+setopt histfindnodups
+setopt HIST_FIND_NO_DUPS
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/simonasrupsys/.oh-my-zsh"
+# export ZSH="/Users/sirup/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -57,6 +65,17 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+# load zgen base
+zgen oh-my-zsh
+
+# zgen load plugins
+zgen load zsh-users/zsh-syntax-highlighting
+zgen load zsh-users/zsh-autosuggestions
+zgen load zsh-users/zsh-completions
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -76,11 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -98,5 +117,40 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias dotdrop="~/dotfiles/dotdrop.sh"
+alias vi="/usr/local/bin/nvim"
+alias sr="ssh -l root $@"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Autocompletion magic
+zstyle ':completion:*' menu select # select completions with arrow keys
+zstyle ':completion:*' group-name '' # group results by category
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
+
+# Smth 
+eval "$(anyenv init -)"
+
+# Load env vars
+source ~/.zsh_env_vars
+
+# Load functions
+#fpath=($fpath ~/dotfiles/functions)
+#autoload -Uz ~/dotfiles/functions/**/*
+
+check_overcommit() {
+  if [ -d ".git" ]; then
+    template="$HOME/.overcommit.yml"
+    if [ ! -L ".overcommit.yml" ]; then
+      echo 'Installing .overcommit.yml'
+      ln -sf "$template" "$(pwd)/.overcommit.yml"
+      overcommit --install
+      overcommit --sign
+    fi
+  fi
+}
+
+# Install .overcommit.yml to git repos
+precmd() {  # run before each prompt
+  check_overcommit
+}
+

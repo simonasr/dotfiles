@@ -31,3 +31,9 @@ echo 'Installing xcode cli tools'
 
 # Installing Homebrew packages
 . $HOME/dotfiles/install/brew-install.sh
+
+# Installing gems
+. $HOME/dotfiles/install/gem-install.sh
+
+# Installing manual "git clone" things
+. $HOME/dotfiles/install/git-clone-installs.sh

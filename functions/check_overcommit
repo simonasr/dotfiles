@@ -1,0 +1,9 @@
+if [ -d ".git" ]; then
+  template="$HOME/.overcommit.yml"
+  if [ ! -L ".overcommit.yml" ]; then
+    echo 'Installing .overcommit.yml'
+    ln -sf "$template" "$(pwd)/.overcommit.yml"
+    overcommit --install
+    overcommit --sign
+  fi
+fi

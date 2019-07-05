@@ -19,6 +19,8 @@ brew install screen
 brew install wget
 brew install zsh
 brew install fzf
+brew install shellcheck
+brew install imagemagick
 
 # brew casks installations
 # brew cask install amm
@@ -34,6 +36,7 @@ brew install fzf
 # brew cask install spotify
 brew cask install vlc
 # brew cask install xquartz
+brew cask install kitty
 
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -41,7 +44,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Boost fzf
 /usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish
 
-# nvim 
+# nvim
 brew install neovim
 pip3 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Firacode fonts
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
