@@ -34,6 +34,9 @@ dotfiles:
   f_config_kitty_kitty.conf:
     src: config/kitty/kitty.conf
     dst: ~/.config/kitty/kitty.conf
+  f_gitignore_global:
+    src: gitignore_global
+    dst: ~/.gitignore_global
 profiles:
   Simonass-Air.lan:
     dotfiles:
@@ -50,6 +53,7 @@ profiles:
     - d_vim
     - f_overcommit.yml
     - f_config_kitty_kitty.conf
+    - f_gitignore_global
   Simonass-MBP.lan:
     include:
     - Simonass-MacBook-Pro.local
