@@ -37,6 +37,9 @@ dotfiles:
   f_gitignore_global:
     src: gitignore_global
     dst: ~/.gitignore_global
+  f_hyper.js:
+    src: hyper.js
+    dst: ~/.hyper.js
 profiles:
   Simonass-Air.lan:
     dotfiles:
@@ -54,6 +57,7 @@ profiles:
     - f_overcommit.yml
     - f_config_kitty_kitty.conf
     - f_gitignore_global
+    - f_hyper.js
   Simonass-MBP.lan:
     include:
     - Simonass-MacBook-Pro.local
