@@ -53,3 +53,5 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 
+# MacLaunch
+brew install hazcod/homebrew-hazcod/maclaunch
