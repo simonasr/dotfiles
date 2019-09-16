@@ -40,6 +40,9 @@ dotfiles:
   f_hyper.js:
     src: hyper.js
     dst: ~/.hyper.js
+  f_config_kitty_theme.conf:
+    src: config/kitty/theme.conf
+    dst: ~/.config/kitty/theme.conf
 profiles:
   Simonass-Air.lan:
     dotfiles:
@@ -58,6 +61,7 @@ profiles:
     - f_config_kitty_kitty.conf
     - f_gitignore_global
     - f_hyper.js
+    - f_config_kitty_theme.conf
   Simonass-MBP.lan:
     include:
     - Simonass-MacBook-Pro.local
