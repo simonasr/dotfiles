@@ -21,6 +21,7 @@ brew install zsh
 brew install fzf
 brew install shellcheck
 brew install imagemagick
+brew install openssl
 
 # brew casks installations
 # brew cask install amm
