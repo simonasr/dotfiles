@@ -5,10 +5,7 @@
 echo "Please edit config.yaml for your machine before proceeding. Is that step complete?"
 read response
 
-if [ "$response" -eq "y" ]; then
-  echo "Please type \'yes\' to proceed. Terminating this script."
-  exit 0
-elif [ "$response" -ne "yes" ]; then
+if [ $response != "yes" ]; then
   echo 'Please make those changes before running this script again to ensure that everything runs smoothly.'
   exit 0
 fi
@@ -26,14 +23,14 @@ echo 'Installing xcode cli tools'
 #   mkdir -p ~/.config/vim ~/.config/mpd ~/.config/ncmpcpp ~/.config/w3m
 # fi
 
-# Installing Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'Installing Homebrew'
+echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Installing Homebrew packages
+echo 'Installing Homebrew packages'
 . $HOME/dotfiles/install/brew-install.sh
 
-# Installing gems
+echo 'Installing gems'
 . $HOME/dotfiles/install/gem-install.sh
 
-# Installing manual "git clone" things
+echo 'Git clone stuff'
 . $HOME/dotfiles/install/git-clone-installs.sh
