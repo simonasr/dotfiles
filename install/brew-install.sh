@@ -57,3 +57,8 @@ brew cask install font-fira-code
 
 # MacLaunch
 brew install hazcod/homebrew-hazcod/maclaunch
+
+# Docker & Docker-compose
+brew install docker
+brew install docker-compose
+
