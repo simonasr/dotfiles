@@ -1,15 +1,7 @@
 [core]
-	excludesfile = /Users/sirup/.gitignore
+	excludesfile = ~/.gitignore
 [github]
   user = simonasr
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [user]
 	name = Simonas Rupsys
 	email = simmonas.rupsys@vinted.com
-[commit]
-	template = /Users/sirup/.stCommitMsg
