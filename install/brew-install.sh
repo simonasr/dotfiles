@@ -21,6 +21,7 @@ brew install zsh
 brew install fzf
 brew install shellcheck
 brew install imagemagick
+brew install openssl
 
 # brew casks installations
 # brew cask install amm
@@ -37,6 +38,13 @@ brew install imagemagick
 brew cask install vlc
 # brew cask install xquartz
 brew cask install kitty
+brew install tree
+
+# anyenv
+brew install anyenv
+anyenv install --init
+anyenv install rbenv
+anyenv install pyenv
 
 # anyenv
 brew install anyenv
@@ -61,3 +69,8 @@ brew cask install font-fira-code
 
 # MacLaunch
 brew install hazcod/homebrew-hazcod/maclaunch
+
+# Docker & Docker-compose
+brew install docker
+brew install docker-compose
+

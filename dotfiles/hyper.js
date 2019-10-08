@@ -146,7 +146,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-font-ligatures", "hypercwd"],
+  plugins: ["hyper-quit", "hyper-font-ligatures", "hypercwd", "hyper-search"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -157,4 +157,6 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
   },
+
+  scrollback: 100000000
 };
