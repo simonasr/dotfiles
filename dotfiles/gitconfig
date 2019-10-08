@@ -5,5 +5,3 @@
 [user]
 	name = Simonas Rupsys
 	email = simmonas.rupsys@vinted.com
-[commit]
-	template = /Users/sirup/.stCommitMsg
