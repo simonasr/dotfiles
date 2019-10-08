@@ -40,6 +40,12 @@ brew cask install vlc
 brew cask install kitty
 brew install tree
 
+# anyenv
+brew install anyenv
+anyenv install --init
+anyenv install rbenv
+anyenv install pyenv
+
 # Install Oh-My-Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
