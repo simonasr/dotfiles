@@ -64,3 +64,9 @@ profiles:
   Simonass-MacBook-Air.local:
     include:
     - Simonass-MacBook-Pro.local
+  linux:
+    dotfiles:
+    - f_gitconfig
+    - f_gitignore
+    - f_gitignore_global
+
