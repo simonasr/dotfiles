@@ -5,3 +5,8 @@
 [user]
 	name = Simonas Rupsys
 	email = simmonas.rupsys@vinted.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
