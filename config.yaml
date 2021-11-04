@@ -37,15 +37,16 @@ dotfiles:
   f_gitignore_global:
     src: gitignore_global
     dst: ~/.gitignore_global
-  f_hyper.js:
-    src: hyper.js
-    dst: ~/.hyper.js
+  f_zsh_git_aliases:
+    src: zsh_git_aliases
+    dst: ~/.zsh_git_aliases
 profiles:
   Simonass-Air.lan:
     dotfiles:
     - f_zshrc
     - f_fzf.zsh
     - f_config_nvim_init.vim
+    - f_config_kitty_kitty.conf
   Simonass-MacBook-Pro.local:
     dotfiles:
     - f_zshrc
@@ -57,13 +58,14 @@ profiles:
     - f_overcommit.yml
     - f_config_kitty_kitty.conf
     - f_gitignore_global
-    - f_hyper.js
   Simonass-MBP.lan:
     include:
     - Simonass-MacBook-Pro.local
   Simonass-MacBook-Pro-3.local:
     include:
     - Simonass-MacBook-Pro.local
+    dotfiles:
+    - f_zsh_git_aliases
   Simonass-MacBook-Air.local:
     include:
     - Simonass-MacBook-Pro.local
