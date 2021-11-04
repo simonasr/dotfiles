@@ -1,4 +1,6 @@
 .overcommit.yml
 *~
 .DS_Store
-.swp
+*.swp
+*.swo
+Gemfile.lock

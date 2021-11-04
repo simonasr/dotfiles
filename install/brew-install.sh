@@ -18,42 +18,13 @@ brew install screen
 # brew install vim
 brew install wget
 brew install zsh
+brew install pure
 brew install fzf
 brew install shellcheck
 brew install imagemagick
 brew install openssl
-
-# brew casks installations
-# brew cask install amm
-# brew cask install betterzipql
-# brew cask install google-chrome
-# brew cask install hammerspoon
-# brew cask install handbrake
-# brew cask install knockknock
-# brew cask install lastfm
-# brew cask install love
-# brew cask install pomolectron
-# brew cask install skim
-# brew cask install spotify
-brew cask install vlc
-# brew cask install xquartz
 brew cask install kitty
 brew install tree
-
-# anyenv
-brew install anyenv
-anyenv install --init
-anyenv install rbenv
-anyenv install pyenv
-
-# anyenv
-brew install anyenv
-anyenv install --init
-anyenv install rbenv
-anyenv install pyenv
-
-# Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Boost fzf
 /usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish

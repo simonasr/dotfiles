@@ -55,3 +55,17 @@ PreCommit:
 #  IndexTags:
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
 #
+  Pycodestyle:
+    enabled: true
+
+  Pylint:
+    enabled: true
+
+  # CookStyle:
+  #   enabled: true
+
+  # RubyLint:
+  #   enabled: true
+
+  RubySyntax:
+    enabled: false
