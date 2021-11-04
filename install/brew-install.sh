@@ -18,6 +18,7 @@ brew install screen
 # brew install vim
 brew install wget
 brew install zsh
+brew install pure
 brew install fzf
 brew install shellcheck
 brew install imagemagick
