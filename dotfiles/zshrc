@@ -49,11 +49,19 @@ alias sr="ssh -o StrictHostKeyChecking=no -l root $@"
 alias p2="ping -i0.2 $@"
 alias ll="ls -la $@"
 
+# pyenv
+alias pyinit='eval "$(pyenv init -)"'
+
 # rbenv
 export PATH="/Users/sirup/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
-# --no-rehash saves ~0.1 sec of zsh load time
-# run ‘rbenv rehash’ manually any time you install a new Ruby or a gem that requires it.
+alias rbinit='eval "$(rbenv init -)"'
+# eval "$(rbenv init -)"
+
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+alias goinit='eval "$(goenv init -)"'
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
