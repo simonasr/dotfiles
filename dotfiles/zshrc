@@ -2,7 +2,25 @@
 
 DEFAULT_USER=whoami``
 
-autoload -U +X compinit && compinit
+#
+# https://gist.github.com/ctechols/ca1035271ad134841284
+# https://carlosbecker.com/posts/speeding-up-zsh
+#
+autoload -Uz compinit
+case $SYSTEM in
+  Darwin)
+    if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+      compinit;
+    else
+      compinit -C;
+    fi
+    ;;
+  Linux)
+    # not yet match GNU & BSD stat
+  ;;
+esac
+_comp_options+=(globdots)
+
 autoload -U promptinit; promptinit
 prompt pure
 prompt_newline='%666v'
@@ -23,6 +41,9 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
+# Enable autocorrect
+setopt CORRECT_ALL
 
 # fixes ^w word delete
 autoload -U select-word-style
@@ -61,7 +82,6 @@ alias rbinit='eval "$(rbenv init -)"'
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 alias goinit='eval "$(goenv init -)"'
-
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
