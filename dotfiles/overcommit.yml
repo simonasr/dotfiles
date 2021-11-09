@@ -20,6 +20,7 @@ PreCommit:
     enabled: true
     exclude:
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
+      - '**/*.md'
 
   LineEndings:
     enabled: true
@@ -69,3 +70,9 @@ PreCommit:
 
   RubySyntax:
     enabled: false
+
+  GoFmt:
+    enabled: true
+
+  GolangciLint:
+    enabled: true
