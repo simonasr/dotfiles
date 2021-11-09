@@ -93,5 +93,23 @@ else
   export EDITOR='nvim'
 fi
 
+# Overcommit
+check_overcommit() {
+  if [ -d ".git" ]; then
+    template="$HOME/.overcommit.yml"
+    if [ ! -L ".overcommit.yml" ]; then
+      echo 'Installing .overcommit.yml'
+      ln -sf "$template" "$(pwd)/.overcommit.yml"
+      overcommit --install
+      overcommit --sign
+    fi
+  fi
+}
+
+# Install .overcommit.yml to git repos
+precmd() {  # run before each prompt
+  check_overcommit
+}
+
 #zprof
 
