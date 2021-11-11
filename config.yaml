@@ -40,6 +40,9 @@ dotfiles:
   f_zsh_git_aliases:
     src: zsh_git_aliases
     dst: ~/.zsh_git_aliases
+  d_hammerspoon:
+    src: hammerspoon
+    dst: ~/.hammerspoon
 profiles:
   Simonass-Air.lan:
     dotfiles:
@@ -58,14 +61,14 @@ profiles:
     - f_overcommit.yml
     - f_config_kitty_kitty.conf
     - f_gitignore_global
+    - f_zsh_git_aliases
+    - d_hammerspoon
   Simonass-MBP.lan:
     include:
     - Simonass-MacBook-Pro.local
   Simonass-MacBook-Pro-3.local:
     include:
     - Simonass-MacBook-Pro.local
-    dotfiles:
-    - f_zsh_git_aliases
   Simonass-MacBook-Air.local:
     include:
     - Simonass-MacBook-Pro.local

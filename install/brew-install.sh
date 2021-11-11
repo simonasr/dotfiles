@@ -11,8 +11,6 @@ brew install coreutils
 brew install git
 brew install htop
 brew install nmap
-brew install python
-brew install python3
 brew install thefuck
 brew install screen
 # brew install vim
@@ -24,7 +22,10 @@ brew install shellcheck
 brew install imagemagick
 brew install openssl
 brew cask install kitty
+brew install hammerspoon
+brew install karabiner-elements
 brew install tree
+brew install pyenv
 
 # Boost fzf
 /usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish
