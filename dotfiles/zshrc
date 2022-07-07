@@ -21,6 +21,7 @@ case $SYSTEM in
 esac
 _comp_options+=(globdots)
 
+fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure
 prompt_newline='%666v'
