@@ -1,8 +1,6 @@
 #!/bin/sh
 
 # brew taps
-brew tap phinze/cask
-brew tap caskroom/cask
 brew tap d12frosted/emacs-plus
 
 # brew installations
@@ -21,7 +19,7 @@ brew install fzf
 brew install shellcheck
 brew install imagemagick
 brew install openssl
-brew cask install kitty
+brew install --cask  kitty
 brew install hammerspoon
 brew install karabiner-elements
 brew install tree
@@ -37,7 +35,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 
 # Firacode fonts
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install --cask  font-fira-code
 
 # MacLaunch
 brew install hazcod/homebrew-hazcod/maclaunch

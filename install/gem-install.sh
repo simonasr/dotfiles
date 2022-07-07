@@ -1,1 +1,1 @@
-gem install overcommit
+sudo gem install overcommit
