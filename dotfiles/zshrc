@@ -42,9 +42,6 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# Enable autocorrect
-setopt CORRECT_ALL
-
 # fixes ^w word delete
 autoload -U select-word-style
 select-word-style bash
@@ -66,11 +63,16 @@ source ~/.zsh_git_aliases
 
 # Alias
 alias vi="/usr/local/bin/nvim"
-alias sr="ssh -o StrictHostKeyChecking=no -l root $@"
+alias sr="ssh -o StrictHostKeyChecking=no -l srupsys $@"
 alias p2="ping -i0.2 $@"
 alias ll="ls -la $@"
+function knaws(){
+    knife "$@" -c ~/.chef/knife-fra52-vinted.rb
+}
 
-# pyenv
+# python/pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
 alias pyinit='eval "$(pyenv init -)"'
 
 # rbenv
@@ -82,6 +84,9 @@ alias rbinit='eval "$(rbenv init -)"'
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 alias goinit='eval "$(goenv init -)"'
+
+# init all envs
+alias init='pyinit;rbinit;goinit'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -108,7 +113,7 @@ check_overcommit() {
 
 # Install .overcommit.yml to git repos
 precmd() {  # run before each prompt
-  check_overcommit
+  # check_overcommit
 }
 
 #zprof
