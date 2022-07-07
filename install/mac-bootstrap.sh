@@ -24,10 +24,12 @@ echo 'Installing xcode cli tools'
 # fi
 
 echo 'Installing Homebrew'
-echo | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/sirup/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo 'Installing Homebrew packages'
-. $HOME/dotfiles/install/brew-install.sh
+# . $HOME/dotfiles/install/brew-install.sh
 
 echo 'Installing gems'
 . $HOME/dotfiles/install/gem-install.sh
