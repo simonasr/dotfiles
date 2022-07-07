@@ -78,7 +78,7 @@ local hk = require "hs.hotkey"
 --   @key {string} hotkey
 --   @value {function} callback function
 local function windowBind(hyper, keyFuncTable)
-  for key,fn in pairs(keyFuncTable) do
+  for key, fn in pairs(keyFuncTable) do
     hk.bind(hyper, key, fn)
   end
 end
@@ -91,30 +91,30 @@ windowBind({"ctrl", "alt"}, {
 
 -- * Set Window Position on screen
 windowBind({"ctrl", "alt", "cmd", "shift"}, {
-  Return = wm.maximizeWindow,    -- ⌃⌥⌘ + M
---   c = wm.centerOnScreen,    -- ⌃⌥⌘ + C
-  left = wm.leftHalf,       -- ⌃⌥⌘ + ←
-  right = wm.rightHalf,     -- ⌃⌥⌘ + →
-  up = wm.topHalf,          -- ⌃⌥⌘ + ↑
-  down = wm.bottomHalf      -- ⌃⌥⌘ + ↓
+  Return = wm.maximizeWindow, -- ⌃⌥⌘ + M
+  --   c = wm.centerOnScreen,    -- ⌃⌥⌘ + C
+  left = wm.leftHalf, -- ⌃⌥⌘ + ←
+  right = wm.rightHalf, -- ⌃⌥⌘ + →
+  up = wm.topHalf, -- ⌃⌥⌘ + ↑
+  down = wm.bottomHalf -- ⌃⌥⌘ + ↓
 })
 -- * Set Window Position on screen
 windowBind({"ctrl", "alt", "shift"}, {
-  left = wm.rightToLeft,      -- ⌃⌥⇧ + ←
-  right = wm.rightToRight,    -- ⌃⌥⇧ + →
-  up = wm.bottomUp,           -- ⌃⌥⇧ + ↑
-  down = wm.bottomDown        -- ⌃⌥⇧ + ↓
+  left = wm.rightToLeft, -- ⌃⌥⇧ + ←
+  right = wm.rightToRight, -- ⌃⌥⇧ + →
+  up = wm.bottomUp, -- ⌃⌥⇧ + ↑
+  down = wm.bottomDown -- ⌃⌥⇧ + ↓
 })
 -- * Set Window Position on screen
 windowBind({"alt", "cmd", "shift"}, {
-  left = wm.leftToLeft,      -- ⌥⌘⇧ + ←
-  right = wm.leftToRight,    -- ⌥⌘⇧ + →
-  up = wm.topUp,             -- ⌥⌘⇧ + ↑
-  down = wm.topDown          -- ⌥⌘⇧ + ↓
+  left = wm.leftToLeft, -- ⌥⌘⇧ + ←
+  right = wm.leftToRight, -- ⌥⌘⇧ + →
+  up = wm.topUp, -- ⌥⌘⇧ + ↑
+  down = wm.topDown -- ⌥⌘⇧ + ↓
 })
 
 -- * Windows-like cycle
 windowBind({"ctrl", "alt", "cmd"}, {
-  u = wm.cycleLeft,          -- ⌃⌥⌘ + u
-  i = wm.cycleRight          -- ⌃⌥⌘ + i
+  u = wm.cycleLeft, -- ⌃⌥⌘ + u
+  i = wm.cycleRight -- ⌃⌥⌘ + i
 })

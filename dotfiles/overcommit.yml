@@ -76,3 +76,8 @@ PreCommit:
 
   GolangciLint:
     enabled: true
+
+  GoVet:
+    enabled: true
+    flags: ['vet']
+    include: './...'
