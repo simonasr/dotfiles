@@ -27,8 +27,10 @@ local applicationHotkeys = {
   k = 'kitty',
   s = 'Slack',
   y = 'Skype',
+  d = 'Discord',
   v = 'Visual Studio Code',
-  m = 'Spotify'
+  m = 'Spotify',
+  t = 'Telegram'
 }
 for key, app in pairs(applicationHotkeys) do
   hs.hotkey.bind(hyper, key, function()
