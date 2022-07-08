@@ -72,3 +72,6 @@ profiles:
   Simonass-MacBook-Air.local:
     include:
     - Simonass-MacBook-Pro.local
+  QP3JHGWT0V:
+    include:
+    - Simonass-MacBook-Pro.local

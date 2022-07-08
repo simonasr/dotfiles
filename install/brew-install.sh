@@ -26,7 +26,7 @@ brew install tree
 brew install pyenv
 
 # Boost fzf
-/usr/local/opt/fzf/install --key-bindings --completion --update-rc --no-fish
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --update-rc --no-fish
 
 # nvim
 brew install neovim
