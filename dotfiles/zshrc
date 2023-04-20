@@ -47,9 +47,13 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 autoload -U select-word-style
 select-word-style bash
 
-# jum ower words
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+# jump around
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^[[1;9D" beginning-of-line
+bindkey "^[[1;9C" end-of-line
 
 # Load stuff
 source ~/.zsh_env_vars
@@ -63,7 +67,7 @@ source ~/.zsh_git_aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Alias
-alias vi="/usr/local/bin/nvim"
+alias vi="/opt/homebrew/bin/nvim"
 alias sr="ssh -o StrictHostKeyChecking=no -l srupsys $@"
 alias p2="ping -i0.2 $@"
 alias ll="ls -la $@"
@@ -85,6 +89,9 @@ alias rbinit='eval "$(rbenv init -)"'
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 alias goinit='eval "$(goenv init -)"'
+
+# TODO: remove this. 1.1.1q openssl is broken. this is workaround
+export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
 # init all envs
 alias init='pyinit;rbinit;goinit'
