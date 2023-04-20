@@ -10,9 +10,6 @@ config:
   workdir: ~/.config/dotdrop
   link_on_import: nolink
 dotfiles:
-  d_vim:
-    dst: ~/.vim
-    src: vim
   f_fzf.zsh:
     dst: ~/.fzf.zsh
     src: fzf.zsh
@@ -57,7 +54,6 @@ profiles:
     - f_config_nvim_init.vim
     - f_gitconfig
     - f_gitignore
-    - d_vim
     - f_overcommit.yml
     - f_config_kitty_kitty.conf
     - f_gitignore_global

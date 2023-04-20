@@ -3,7 +3,6 @@
 [github]
   user = simonasr
 [user]
-	name = Simonas Rupsys
 	email = simmonas.rupsys@vinted.com
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -12,3 +11,5 @@
 	smudge = git-lfs smudge -- %f
 [url "git@github.com:"]
 	insteadOf = git://github.com/
+[safe]
+	directory = /Users/sirup/.goenv

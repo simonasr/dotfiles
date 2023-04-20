@@ -50,6 +50,9 @@ select-word-style bash
 # jump around
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
+bindkey "\e[1;3D" backward-word # ⌥←
+bindkey "\e[1;3C" forward-word # ⌥→
+
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^[[1;9D" beginning-of-line
@@ -59,6 +62,7 @@ bindkey "^[[1;9C" end-of-line
 source ~/.zsh_env_vars
 # source ~/.zsh_terragrunt_vars
 source ~/.zsh_git_aliases
+source ~/.zsh_vinted_aliases
 
 # zstyle
 # zstyle :prompt:pure:path color default
@@ -68,11 +72,15 @@ source ~/.zsh_git_aliases
 
 # Alias
 alias vi="/opt/homebrew/bin/nvim"
-alias sr="ssh -o StrictHostKeyChecking=no -l srupsys $@"
+alias sr="ssh -A -o StrictHostKeyChecking=no -l srupsys $@"
 alias p2="ping -i0.2 $@"
 alias ll="ls -la $@"
+alias knife="~/bin/knife"
 function knaws(){
     knife "$@" -c ~/.chef/knife-fra52-vinted.rb
+}
+function knams(){
+    knife "$@" -c ~/.chef/knife-ams1-vinted.rb
 }
 
 # python/pyenv
@@ -95,6 +103,9 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 
 # init all envs
 alias init='pyinit;rbinit;goinit'
+# pyinit
+rbinit
+# goinit
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -126,3 +137,10 @@ precmd() {  # run before each prompt
 
 #zprof
 
+
+source "${DEVTOOLS_PATH:-$HOME/vinted/dev-tools}/bin/shell_function.sh"
+
+
+export PATH="$HOME/bin:$PATH"
+
+source /Users/sirup/.docker/init-zsh.sh || true # Added by Docker Desktop
