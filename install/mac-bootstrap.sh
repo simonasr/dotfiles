@@ -25,11 +25,11 @@ echo 'Installing xcode cli tools'
 
 echo 'Installing Homebrew'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/sirup/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/simonas.rupsys/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo 'Installing Homebrew packages'
-# . $HOME/dotfiles/install/brew-install.sh
+. $HOME/dotfiles/install/brew-install.sh
 
 echo 'Installing gems'
 . $HOME/dotfiles/install/gem-install.sh
