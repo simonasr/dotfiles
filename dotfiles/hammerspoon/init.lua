@@ -26,7 +26,7 @@ local applicationHotkeys = {
   c = 'Google Chrome',
   k = 'kitty',
   s = 'Slack',
-  y = 'Skype',
+  y = 'Signal',
   d = 'Discord',
   v = 'Visual Studio Code',
   m = 'Spotify',
@@ -66,55 +66,16 @@ hs.hotkey.bind(hyper, "p", function()
   hs.network.ping.ping("8.8.8.8", 1, 0.01, 1.0, "any", pingResult)
 end)
 
--- WINDOW MANAGEMENT
-local wm = require('window-management')
-local hk = require "hs.hotkey"
+-- -- WINDOW MANAGEMENT
 
--- * Key Binding Utility
---- Bind hotkey for window management.
--- @function windowBind
--- @param {table} hyper - hyper key set
--- @param { ...{key=value} } keyFuncTable - multiple hotkey and function pairs
---   @key {string} hotkey
---   @value {function} callback function
-local function windowBind(hyper, keyFuncTable)
-  for key, fn in pairs(keyFuncTable) do
-    hk.bind(hyper, key, fn)
-  end
-end
+hs.loadSpoon("MiroWindowsManager")
 
--- * Move window to screen
-windowBind({"ctrl", "alt"}, {
-  left = wm.throwLeft,
-  right = wm.throwRight
-})
-
--- * Set Window Position on screen
-windowBind({"ctrl", "alt", "cmd", "shift"}, {
-  Return = wm.maximizeWindow, -- ⌃⌥⌘ + M
-  --   c = wm.centerOnScreen,    -- ⌃⌥⌘ + C
-  left = wm.leftHalf, -- ⌃⌥⌘ + ←
-  right = wm.rightHalf, -- ⌃⌥⌘ + →
-  up = wm.topHalf, -- ⌃⌥⌘ + ↑
-  down = wm.bottomHalf -- ⌃⌥⌘ + ↓
-})
--- * Set Window Position on screen
-windowBind({"ctrl", "alt", "shift"}, {
-  left = wm.rightToLeft, -- ⌃⌥⇧ + ←
-  right = wm.rightToRight, -- ⌃⌥⇧ + →
-  up = wm.bottomUp, -- ⌃⌥⇧ + ↑
-  down = wm.bottomDown -- ⌃⌥⇧ + ↓
-})
--- * Set Window Position on screen
-windowBind({"alt", "cmd", "shift"}, {
-  left = wm.leftToLeft, -- ⌥⌘⇧ + ←
-  right = wm.leftToRight, -- ⌥⌘⇧ + →
-  up = wm.topUp, -- ⌥⌘⇧ + ↑
-  down = wm.topDown -- ⌥⌘⇧ + ↓
-})
-
--- * Windows-like cycle
-windowBind({"ctrl", "alt", "cmd"}, {
-  u = wm.cycleLeft, -- ⌃⌥⌘ + u
-  i = wm.cycleRight -- ⌃⌥⌘ + i
+hs.window.animationDuration = 0.0
+spoon.MiroWindowsManager:bindHotkeys({
+  up = {hyper, "up"},
+  right = {hyper, "right"},
+  down = {hyper, "down"},
+  left = {hyper, "left"},
+  fullscreen = {hyper, "return"},
+  nextscreen = {hyper, "n"}
 })

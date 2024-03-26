@@ -135,7 +135,7 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 alias init='pyinit;rbinit;goinit'
 # pyinit
 rbinit
-# goinit
+goinit
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -172,3 +172,7 @@ source "${DEVTOOLS_PATH:-$HOME/vinted/dev-tools}/bin/shell_function.sh"
 export PATH="$HOME/.tfenv/bin:$PATH"
 
 export PATH="$HOME/bin:$PATH"
+
+# export TERM=xterm-kitty
+
+eval $(thefuck --alias)
