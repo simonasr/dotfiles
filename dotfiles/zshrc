@@ -2,11 +2,32 @@
 
 DEFAULT_USER=whoami``
 
+# system detection
+function detect_system() {
+    local _uname_a=$(uname -a)
+
+    if [[ $_uname_a =~ Microsoft ]]; then
+        SYSTEM="WSL1"
+    elif [[ $_uname_a =~ WSL2 ]]; then
+        SYSTEM="WSL2"
+    elif [[ "$OSTYPE" =~ ^darwin ]]; then
+        SYSTEM="Darwin"
+    elif [[ "$OSTYPE" =~ android ]]; then
+        SYSTEM="Android"
+    elif [[ "$OSTYPE" =~ ^linux ]]; then
+        SYSTEM="Linux"
+    else
+        SYSTEM="Unknown"
+    fi
+}
+detect_system
+
 #
 # https://gist.github.com/ctechols/ca1035271ad134841284
 # https://carlosbecker.com/posts/speeding-up-zsh
 #
 autoload -Uz compinit
+# autoload -U +X compinit && compinit
 case $SYSTEM in
   Darwin)
     if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
@@ -27,6 +48,9 @@ prompt pure
 prompt_newline='%666v'
 PROMPT=" $PROMPT "
 PROMPT='%(?.%F{magenta}.%F{red}❯%F{magenta})❯%f '
+
+# fzf-tab
+source ~/git/fzf-tab/fzf-tab.plugin.zsh
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -77,10 +101,16 @@ alias p2="ping -i0.2 $@"
 alias ll="ls -la $@"
 alias knife="~/bin/knife"
 function knaws(){
-    knife "$@" -c ~/.chef/knife-fra52-vinted.rb
+    knife "$@" --profile fra52
 }
 function knams(){
-    knife "$@" -c ~/.chef/knife-ams1-vinted.rb
+    knife "$@" --profile ams1
+}
+function knvln(){
+    knife "$@" --profile hx
+}
+function knall(){
+    for k in knams knvln knaws; do $k "$@"; done
 }
 
 # python/pyenv
@@ -89,7 +119,7 @@ export PATH="$PYENV_ROOT/shims:$PATH"
 alias pyinit='eval "$(pyenv init -)"'
 
 # rbenv
-export PATH="/Users/sirup/.rbenv/bin:$PATH"
+export PATH="/Users/simonas.rupsys/.rbenv/bin:$PATH"
 alias rbinit='eval "$(rbenv init -)"'
 # eval "$(rbenv init -)"
 
@@ -105,7 +135,7 @@ export PATH="/opt/homebrew/opt/openssl@1.1/bin:$PATH"
 alias init='pyinit;rbinit;goinit'
 # pyinit
 rbinit
-# goinit
+goinit
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -136,11 +166,13 @@ precmd() {  # run before each prompt
 }
 
 #zprof
-
-
 source "${DEVTOOLS_PATH:-$HOME/vinted/dev-tools}/bin/shell_function.sh"
 
+# tfenv path
+export PATH="$HOME/.tfenv/bin:$PATH"
 
 export PATH="$HOME/bin:$PATH"
 
-source /Users/sirup/.docker/init-zsh.sh || true # Added by Docker Desktop
+# export TERM=xterm-kitty
+
+eval $(thefuck --alias)

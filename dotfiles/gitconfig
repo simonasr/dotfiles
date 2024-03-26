@@ -3,7 +3,8 @@
 [github]
   user = simonasr
 [user]
-	email = simmonas.rupsys@vinted.com
+	email = simonas.rupsys@vinted.com
+	name = Simonas Rupsys
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
