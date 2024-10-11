@@ -24,6 +24,7 @@ end)
 -- apps
 local applicationHotkeys = {
   c = 'Google Chrome',
+  o = 'Opera GX',
   k = 'kitty',
   s = 'Slack',
   y = 'Signal',
